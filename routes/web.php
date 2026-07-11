@@ -3,9 +3,26 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/home');
+
+route::livewire('/home', 'pages::guest.home')->name('guest.home');
+
+route::livewire('/doctors', 'pages::guest.doctor')->name('guest.doctor');
+
+route::livewire('/services', 'pages::guest.services')->name('guest.service');
+
+route::livewire('/contact', 'pages::guest.contact')->name('guest.contact');
+
+route::livewire('/about', 'pages::guest.about')->name('guest.about');
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////
 
 Route::get('/dashboard', function () {
     return view('dashboard');
