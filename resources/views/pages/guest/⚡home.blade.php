@@ -184,16 +184,16 @@ new class extends Component
     <div class="before-after-grid">
       <div class="ba-card reveal">
         <div class="ba-images">
-          <div class="ba-img"><img src="https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Before teeth whitening" loading="lazy" style="filter:brightness(0.82) saturate(0.55);" /></div>
-          <div class="ba-img"><img src="https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=400" alt="After teeth whitening" loading="lazy" /></div>
+          <div class="ba-img"><img src="{{ asset('images/Capture.JPG') }}" alt="Before teeth whitening" loading="lazy"  /></div>
+          <div class="ba-img"><img src="{{ asset('images/Capture2.JPG') }}" alt="After teeth whitening" loading="lazy" /></div>
           <span class="ba-label before">Before</span><span class="ba-label after">After</span>
         </div>
         <div class="ba-info"><h4>Teeth Whitening</h4><p>6 shades brighter in a single session</p></div>
       </div>
       <div class="ba-card reveal reveal-delay-1">
         <div class="ba-images">
-          <div class="ba-img"><img src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Before dental care" loading="lazy" style="filter:brightness(0.8) saturate(0.5);" /></div>
-          <div class="ba-img"><img src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=400" alt="After dental care" loading="lazy" /></div>
+          <div class="ba-img"><img src="{{ asset('images/Capture3.JPG') }}" alt="Before dental care" loading="lazy" /></div>
+          <div class="ba-img"><img src="{{ asset('images/Capture4.JPG') }}" alt="After dental care" loading="lazy" /></div>
           <span class="ba-label before">Before</span><span class="ba-label after">After</span>
         </div>
         <div class="ba-info"><h4>Dental Implant</h4><p>Natural-looking permanent replacement</p></div>
@@ -222,7 +222,7 @@ new class extends Component
       <div class="doctor-card reveal">
         <div class="doctor-img">
           <img src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Dr. Ahmed Benali" loading="lazy" />
-          <div class="doctor-overlay"><a href="doctors.html">View Profile</a></div>
+          <div class="doctor-overlay"><a href="/doctors">View More</a></div>
         </div>
         <div class="doctor-info">
           <span class="doctor-specialty">Implant Specialist</span>
@@ -234,7 +234,7 @@ new class extends Component
       <div class="doctor-card reveal reveal-delay-1">
         <div class="doctor-img">
           <img src="https://images.pexels.com/photos/5215002/pexels-photo-5215002.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Dr. Sarah Meziani" loading="lazy" />
-          <div class="doctor-overlay"><a href="doctors.html">View Profile</a></div>
+          <div class="doctor-overlay"><a href="/doctors">View More</a></div>
         </div>
         <div class="doctor-info">
           <span class="doctor-specialty">Orthodontics</span>
@@ -246,7 +246,7 @@ new class extends Component
       <div class="doctor-card reveal reveal-delay-2">
         <div class="doctor-img">
           <img src="https://images.pexels.com/photos/6749773/pexels-photo-6749773.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Dr. Karim Hadj" loading="lazy" />
-          <div class="doctor-overlay"><a href="doctors.html">View Profile</a></div>
+          <div class="doctor-overlay"><a href="/doctors">View More</a></div>
         </div>
         <div class="doctor-info">
           <span class="doctor-specialty">Pediatric Dentistry</span>
@@ -258,7 +258,7 @@ new class extends Component
       <div class="doctor-card reveal reveal-delay-3">
         <div class="doctor-img">
           <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Dr. Lina Cherif" loading="lazy" />
-          <div class="doctor-overlay"><a href="doctors.html">View Profile</a></div>
+          <div class="doctor-overlay"><a href="/doctors">View More</a></div>
         </div>
         <div class="doctor-info">
           <span class="doctor-specialty">Cosmetic Dentistry</span>

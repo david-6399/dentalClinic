@@ -17,6 +17,8 @@ route::livewire('/about', 'pages::guest.about')->name('guest.about');
 
 
 
+route::livewire('/adminlogin', 'pages::auth.login');
+    
 
 
 
