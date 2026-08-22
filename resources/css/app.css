@@ -101,8 +101,8 @@ body { background-color: var(--bg); color: var(--text); line-height: 1.6; overfl
 .nav-links a {
   text-decoration: none;
   color: var(--text-light);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 800;
   transition: color 0.2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
@@ -289,7 +289,7 @@ body { background-color: var(--bg); color: var(--text); line-height: 1.6; overfl
   text-align: center;
 }
 .hero-stat .num { font-size: 2rem; font-weight: 800; color: #67e8f9; }
-.hero-stat .label { font-size: 0.75rem; opacity: 0.8; margin-top: 4px; }
+.hero-stat .label { font-size: 1.4rem; opacity: 0.8;  font-weight: 800; margin-top: 4px; }
 
 /* ─── Section Common ─── */
 .section { padding: 80px 24px; }
@@ -346,7 +346,7 @@ body { background-color: var(--bg); color: var(--text); line-height: 1.6; overfl
 @media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
 .stat-item { text-align: center; color: #fff; }
 .stat-num { font-size: 2.5rem; font-weight: 800; color: #67e8f9; line-height: 1; }
-.stat-label { font-size: 0.85rem; opacity: 0.85; margin-top: 6px; font-weight: 500; }
+.stat-label { font-size: 1.4rem; opacity: 0.85; margin-top: 6px; font-weight: 800; }
 
 /* ─── Service Cards ─── */
 .services-grid {
