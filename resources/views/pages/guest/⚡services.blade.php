@@ -47,7 +47,7 @@ new class extends Component
           <li>Oral cancer screening</li>
           <li>Personalized care recommendations</li>
         </ul>
-        <a href="contact.html" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="service-detail-card reveal reveal-delay-1">
@@ -64,7 +64,7 @@ new class extends Component
           <li>Fluoride treatment</li>
           <li>Oral hygiene guidance</li>
         </ul>
-        <a href="contact.html" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="service-detail-card reveal">
@@ -81,7 +81,7 @@ new class extends Component
           <li>Custom whitening trays provided</li>
           <li>Results last 12–18 months</li>
         </ul>
-        <a href="contact.html" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="service-detail-card reveal reveal-delay-1">
@@ -98,7 +98,7 @@ new class extends Component
           <li>Treatment timeline estimate</li>
           <li>Full cost breakdown provided</li>
         </ul>
-        <a href="contact.html" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="service-detail-card reveal">
@@ -115,7 +115,7 @@ new class extends Component
           <li>Local anesthesia included</li>
           <li>Lifetime structural warranty</li>
         </ul>
-        <a href="contact.html" class="btn-book">Book Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn-book">Book Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="service-detail-card reveal reveal-delay-1">
@@ -132,7 +132,7 @@ new class extends Component
           <li>Parent oral hygiene guidance</li>
           <li>Ages 1 and up welcome</li>
         </ul>
-        <a href="contact.html" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn-book">Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
     </div>

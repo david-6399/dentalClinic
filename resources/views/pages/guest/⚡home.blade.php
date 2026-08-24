@@ -19,7 +19,7 @@ new class extends Component
         <span class="hero-badge-dot" aria-hidden="true"></span>
         Now Accepting New Patients
       </div>
-      <h1 id="hero-heading">Healthy Smiles<br /><span>Start Here</span></h1>
+      <h1 id="hero-heading">Healthy Smiles test<br /><span>Start Here</span></h1>
       <p>Advanced dental care for adults and children in a comfortable, modern environment. Experience dentistry that puts you first.</p>
       <div class="hero-buttons">
         <a href="contact.html" class="btn-primary">
