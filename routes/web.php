@@ -21,6 +21,10 @@ route::livewire('/adminlogin', 'pages::auth.login');
     
 
 route::livewire('/dashboard', 'pages::dashboard.main')->name('dashboard');
+route::livewire('/dashboard/appointments', 'pages::dashboard.appointement')->name('dashboard.appointments');
+route::livewire('/dashboard/patients', 'pages::dashboard.patient')->name('dashboard.patients');
+route::livewire('/dashboard/doctors', 'pages::dashboard.doctor')->name('dashboard.doctors');
+
 
 
 
