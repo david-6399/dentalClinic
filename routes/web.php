@@ -20,15 +20,12 @@ route::livewire('/about', 'pages::guest.about')->name('guest.about');
 route::livewire('/adminlogin', 'pages::auth.login');
     
 
-
+route::livewire('/dashboard', 'pages::dashboard.main')->name('dashboard');
 
 
 
 /////////////////////////////////////////////////////////////
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
