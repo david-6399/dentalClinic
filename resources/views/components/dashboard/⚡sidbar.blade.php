@@ -74,10 +74,10 @@ new class extends Component {
                 <i data-lucide="users" class="w-5 h-5"></i>
                 <span class="font-medium">Patients</span>
             </a>
-            <a href="#treatment-mix"
+            <a href="{{route('dashboard.doctors')}}"
                 class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                 <i data-lucide="clipboard-list" class="w-5 h-5"></i>
-                <span class="font-medium">Treatments</span>
+                <span class="font-medium">Doctors</span>
             </a>
             <button onclick="openAddPopup()"
                 class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
