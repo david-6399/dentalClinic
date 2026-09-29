@@ -59,25 +59,30 @@ new class extends Component {
         </div>
 
         <nav class="p-4 space-y-2">
-            <a href="{{route('dashboard')}}"
+            <a href="{{ route('dashboard') }}"
                 class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300">
                 <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
                 <span class="font-medium">Overview</span>
             </a>
-            <a href="{{route('dashboard.appointments')}}"
+            <a href="{{ route('dashboard.appointments') }}"
                 class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                 <i data-lucide="calendar-days" class="w-5 h-5"></i>
                 <span class="font-medium">Appointments</span>
             </a>
-            <a href="{{route('dashboard.patients')}}"
+            <a href="{{ route('dashboard.patients') }}"
                 class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                 <i data-lucide="users" class="w-5 h-5"></i>
                 <span class="font-medium">Patients</span>
             </a>
-            <a href="{{route('dashboard.doctors')}}"
+            <a href="{{ route('dashboard.doctors') }}"
                 class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                 <i data-lucide="clipboard-list" class="w-5 h-5"></i>
                 <span class="font-medium">Doctors</span>
+            </a>
+            <a href="{{ route('dashboard.services') }}"
+                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
+                <i data-lucide="briefcase-medical" class="w-5 h-5"></i>
+                <span class="font-medium">Services</span>
             </a>
             <button onclick="openAddPopup()"
                 class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">

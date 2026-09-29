@@ -11,7 +11,7 @@ new class extends Component {
 };
 ?>
 
-<div>
+<div class="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900">
     
     <!-- Header -->
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-3">

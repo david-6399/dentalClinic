@@ -10,7 +10,7 @@ new class extends Component {
 
     public string $search = '';
     public array $doctors = [
-        ['idubu' => 1, 'name' => 'Dr. Ahmed Benali', 'specialty' => 'Implantology', 'email' => 'ahmed.benali@novadental.com', 'phone' => '+213 555 010 241', 'experience' => 15, 'patients' => 248, 'status' => 'Active'],
+        ['id' => 1, 'name' => 'Dr. Ahmed Benali', 'specialty' => 'Implantology', 'email' => 'ahmed.benali@novadental.com', 'phone' => '+213 555 010 241', 'experience' => 15, 'patients' => 248, 'status' => 'Active'],
         ['id' => 2, 'name' => 'Dr. Sarah Meziani', 'specialty' => 'Orthodontics', 'email' => 'sarah.meziani@novadental.com', 'phone' => '+213 555 010 392', 'experience' => 10, 'patients' => 186, 'status' => 'Active'],
         ['id' => 3, 'name' => 'Dr. Karim Hadj', 'specialty' => 'Pediatric dentistry', 'email' => 'karim.hadj@novadental.com', 'phone' => '+213 555 010 517', 'experience' => 8, 'patients' => 143, 'status' => 'Active'],
         ['id' => 4, 'name' => 'Dr. Lina Cherif', 'specialty' => 'Cosmetic dentistry', 'email' => 'lina.cherif@novadental.com', 'phone' => '+213 555 010 628', 'experience' => 12, 'patients' => 201, 'status' => 'Active'],
