@@ -19,6 +19,7 @@
         
             {{-- @include('components.guest.⚡navbar') --}}
             <livewire:guest.navbar />
+            
 
             <!-- Page Heading -->
 

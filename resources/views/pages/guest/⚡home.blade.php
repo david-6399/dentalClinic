@@ -10,7 +10,7 @@ new class extends Component
 
 <div>
     <!-- HERO -->
-<section class="hero" aria-labelledby="hero-heading">
+    <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
@@ -22,11 +22,11 @@ new class extends Component
       <h1 id="hero-heading">Healthy Smiles <br /><span>Start Here</span></h1>
       <p>Advanced dental care for adults and children in a comfortable, modern environment. Experience dentistry that puts you first.</p>
       <div class="hero-buttons">
-        <a href="contact.html" class="btn-primary">
+        <a href="{{ route('guest.contact') }}" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           Book Consultation
         </a>
-        <a href="services.html" class="btn-secondary">
+        <a href="{{ route('guest.service') }} " class="btn-secondary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           Our Services
         </a>
@@ -389,4 +389,5 @@ new class extends Component
   </div>
 </section>
 
+  
 </div>

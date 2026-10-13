@@ -24,6 +24,7 @@ new class extends Component {
                 <li><a href="/doctors">Doctors</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
+                <li><a href="/dashboard" >Dashboard</a></li>
                 <li><a href="/contact" class="btn-nav">Book Appointment</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -39,6 +40,7 @@ new class extends Component {
             <a href="/services" role="menuitem">Services</a>
             <a href="/doctors" role="menuitem">Doctors</a>
             <a href="/about" role="menuitem">About</a>
+            <a href="/dashboard" role="menuitem">Dashboard</a>
             <a href="/contact" role="menuitem">Contact</a>
             <a href="/contact" class="btn-mobile" role="menuitem">Book Appointment</a>
         </div>

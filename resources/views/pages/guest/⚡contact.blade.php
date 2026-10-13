@@ -8,12 +8,11 @@ new class extends Component {
 ?>
 
 <div>
-
     <!-- PAGE HERO -->
     <section class="page-hero" aria-labelledby="page-heading">
         <div class="page-hero-content">
             <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="index.html">Home</a>
+                <a href="{{ route('guest.home') }}">Home</a>
                 <span class="breadcrumb-sep" aria-hidden="true">/</span>
                 <span>Contact</span>
             </nav>
