@@ -82,7 +82,7 @@ new class extends Component {
     </section>
 
     <!-- CORE VALUES -->
-    <section class="section" style="background:#F8FAFC;" aria-labelledby="values-heading">
+    <section class="section" style="background:var(--bg);" aria-labelledby="values-heading">
         <div class="container">
             <div class="section-header center">
                 <div class="section-tag reveal">Core Values</div>
@@ -163,7 +163,7 @@ new class extends Component {
             <div style="max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:0;">
                 <div style="display:flex;gap:24px;padding-bottom:32px;position:relative;">
                     <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.75rem;z-index:1;"
+                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:0.75rem;z-index:1;"
                             aria-hidden="true">2009</div>
                         <div style="flex:1;width:2px;background:var(--border);margin-top:8px;" aria-hidden="true">
                         </div>
@@ -176,7 +176,7 @@ new class extends Component {
                 </div>
                 <div style="display:flex;gap:24px;padding-bottom:32px;position:relative;">
                     <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.75rem;z-index:1;"
+                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:0.75rem;z-index:1;"
                             aria-hidden="true">2013</div>
                         <div style="flex:1;width:2px;background:var(--border);margin-top:8px;" aria-hidden="true">
                         </div>
@@ -189,7 +189,7 @@ new class extends Component {
                 </div>
                 <div style="display:flex;gap:24px;padding-bottom:32px;position:relative;">
                     <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.75rem;z-index:1;"
+                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:0.75rem;z-index:1;"
                             aria-hidden="true">2017</div>
                         <div style="flex:1;width:2px;background:var(--border);margin-top:8px;" aria-hidden="true">
                         </div>
@@ -202,7 +202,7 @@ new class extends Component {
                 </div>
                 <div style="display:flex;gap:24px;padding-bottom:32px;position:relative;">
                     <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.75rem;z-index:1;"
+                        <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:0.75rem;z-index:1;"
                             aria-hidden="true">2020</div>
                         <div style="flex:1;width:2px;background:var(--border);margin-top:8px;" aria-hidden="true">
                         </div>
@@ -215,7 +215,7 @@ new class extends Component {
                 </div>
                 <div style="display:flex;gap:24px;">
                     <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                        <div style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.75rem;"
+                        <div style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:0.75rem;"
                             aria-hidden="true">2024</div>
                     </div>
                     <div class="timeline-content reveal-right">

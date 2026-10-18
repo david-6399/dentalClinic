@@ -14,7 +14,7 @@ new class extends Component
   <div class="footer-grid">
     <div>
       <div class="footer-logo">
-        <div class="footer-logo-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 8c0 4 3 6 3 10a2 2 0 0 0 4 0c0-1-.5-2-.5-4s.5-2 .5-2 .5 1 .5 2-.5 3-.5 4a2 2 0 0 0 4 0c0-4 3-6 3-10 0-3-3-6-7-6z"/></svg></div>
+        <div class="footer-logo-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 8c0 4 3 6 3 10a2 2 0 0 0 4 0c0-1-.5-2-.5-4s.5-2 .5-2 .5 1 .5 2-.5 3-.5 4a2 2 0 0 0 4 0c0-4 3-6 3-10 0-3-3-6-7-6z"/></svg></div>
         <span class="footer-logo-text">Nova <span>Dental</span></span>
       </div>
       <p>Modern Dentistry For Modern Families. Your trusted dental care partner since 2009.</p>

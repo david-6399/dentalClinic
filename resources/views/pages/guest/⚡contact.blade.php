@@ -31,7 +31,7 @@ new class extends Component {
                 <!-- INFO COLUMN -->
                 <div class="reveal-left">
                     <div class="contact-info-card">
-                        <h3 style="font-size:1.1rem;font-weight:700;color:#1e293b;margin-bottom:4px;">Contact
+                        <h3 style="font-size:1.1rem;font-weight:700;color:var(--heading);margin-bottom:4px;">Contact
                             Information</h3>
                         <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:8px;">We're here to help.
                             Reach us by phone, email, or visit us in clinic.</p>
@@ -106,7 +106,7 @@ new class extends Component {
                     <!-- QUICK ACTION CARDS -->
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;">
                         <a href="tel:+21321000000"
-                            style="background:var(--primary);color:#fff;border-radius:12px;padding:16px;text-decoration:none;display:flex;align-items:center;gap:10px;transition:background 0.2s;"
+                            style="background:var(--primary);color:var(--white);border-radius:12px;padding:16px;text-decoration:none;display:flex;align-items:center;gap:10px;transition:background 0.2s;"
                             onmouseover="this.style.background='var(--primary-dark)'"
                             onmouseout="this.style.background='var(--primary)'">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -120,16 +120,16 @@ new class extends Component {
                             </div>
                         </a>
                         <a href="mailto:contact@novadental.dz"
-                            style="background:#ECFEFF;color:var(--accent);border-radius:12px;padding:16px;text-decoration:none;display:flex;align-items:center;gap:10px;border:1px solid #A5F3FC;transition:background 0.2s;"
-                            onmouseover="this.style.background='#CFFAFE'" onmouseout="this.style.background='#ECFEFF'">
+                            style="background:var(--soft-accent);color:var(--accent);border-radius:12px;padding:16px;text-decoration:none;display:flex;align-items:center;gap:10px;border:1px solid var(--soft-accent-border);transition:background 0.2s;"
+                            onmouseover="this.style.background='var(--soft-cyan)'" onmouseout="this.style.background='var(--soft-accent)'">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" aria-hidden="true">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                                 <polyline points="22,6 12,13 2,6" />
                             </svg>
                             <div>
-                                <div style="font-size:0.75rem;opacity:0.75;color:#0891B2;">Email Us</div>
-                                <div style="font-weight:700;font-size:0.82rem;color:#0E7490;">Send a Message</div>
+                                <div style="font-size:0.75rem;opacity:0.75;color:var(--cyan);">Email Us</div>
+                                <div style="font-weight:700;font-size:0.82rem;color:var(--deep-cyan);">Send a Message</div>
                             </div>
                         </a>
                     </div>
@@ -216,25 +216,25 @@ new class extends Component {
     </section>
 
     <!-- MAP PLACEHOLDER -->
-    <section class="section-sm" style="background:#F8FAFC;" aria-label="Clinic location">
+    <section class="section-sm" style="background:var(--bg);" aria-label="Clinic location">
         <div class="container">
             <div
-                style="border-radius:20px;overflow:hidden;border:1px solid var(--border);position:relative;height:320px;background:linear-gradient(135deg,#EFF6FF 0%,#DBEAFE 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
-                <div style="width:64px;height:64px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,99,235,0.3);"
+                style="border-radius:20px;overflow:hidden;border:1px solid var(--border);position:relative;height:320px;background:linear-gradient(135deg,var(--soft-primary) 0%,var(--soft-primary-hover) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+                <div style="width:64px;height:64px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px var(--primary-30);"
                     aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--white)"
                         stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                         <circle cx="12" cy="10" r="3" />
                     </svg>
                 </div>
                 <div style="text-align:center;">
-                    <h4 style="font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:6px;">Nova Dental Clinic</h4>
+                    <h4 style="font-size:1rem;font-weight:700;color:var(--heading);margin-bottom:6px;">Nova Dental Clinic</h4>
                     <p style="font-size:0.875rem;color:var(--text-light);">123 Rue Didouche Mourad, Alger Centre,
                         Algeria</p>
                 </div>
                 <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
-                    style="background:var(--primary);color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:0.875rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:background 0.2s;"
+                    style="background:var(--primary);color:var(--white);padding:10px 20px;border-radius:8px;text-decoration:none;font-size:0.875rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:background 0.2s;"
                     onmouseover="this.style.background='var(--primary-dark)'"
                     onmouseout="this.style.background='var(--primary)'">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"

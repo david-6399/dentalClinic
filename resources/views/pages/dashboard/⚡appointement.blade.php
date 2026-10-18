@@ -214,7 +214,7 @@ new class extends Component {
             </div>
 
             <div
-                class="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-200">
+                class="rounded-xl border border-primary-200 bg-primary-50 px-4 py-3 text-sm text-primary-800 dark:border-primary-900 dark:bg-primary-950/40 dark:text-primary-200">
                 Demonstration records only. Changes are temporary and are not saved to a database.
             </div>
 
@@ -258,7 +258,7 @@ new class extends Component {
                             $mobileStatusClasses = match ($appointment['status']) {
                                 'Checked in' => 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300',
                                 'In chair' => 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300',
-                                'Completed' => 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
+                                'Completed' => 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300',
                                 'Cancelled' => 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300',
                                 default => 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',
                             };
@@ -291,7 +291,7 @@ new class extends Component {
                             </dl>
                             <div class="mt-3 flex justify-end gap-2 border-t border-gray-100 pt-2 dark:border-gray-700">
                                 <button wire:click="editAppointment({{ $appointment['id'] }})"
-                                    class="inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-blue-700 hover:bg-blue-50 dark:text-blue-300 dark:hover:bg-blue-950/50">
+                                    class="inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-primary-700 hover:bg-primary-50 dark:text-primary-300 dark:hover:bg-primary-950/50">
                                     <i data-lucide="pencil" class="h-4 w-4"></i> Edit
                                 </button>
                                 <button wire:click="deleteAppointment({{ $appointment['id'] }})"
@@ -339,7 +339,7 @@ new class extends Component {
                                         'In chair'
                                             => 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300',
                                         'Completed'
-                                            => 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
+                                            => 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300',
                                         'Cancelled' => 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300',
                                         default => 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',
                                     };
@@ -368,7 +368,7 @@ new class extends Component {
                                             <button wire:click="editAppointment({{ $appointment['id'] }})"
                                                 title="Edit appointment"
                                                 aria-label="Edit appointment for {{ $appointment['patient'] }}"
-                                                class="rounded-md p-2 text-gray-500 transition hover:bg-blue-50 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-blue-950/50 dark:hover:text-blue-300">
+                                                class="rounded-md p-2 text-gray-500 transition hover:bg-primary-50 hover:text-primary-700 dark:text-gray-400 dark:hover:bg-primary-950/50 dark:hover:text-primary-300">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                     class="size-5">

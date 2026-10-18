@@ -8,9 +8,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <style>:root { --brand-primary: {{ $c['theme']['primary'] }}; --brand-accent: {{ $c['theme']['accent'] }}; }</style>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -68,6 +66,9 @@
 
         // Initialize Charts
         function initCharts() {
+            const brandPrimary = getComputedStyle(document.documentElement)
+                .getPropertyValue('--brand-primary').trim();
+
             // Revenue Chart
             const revenueCtx = document.getElementById('revenueChart').getContext('2d');
             new Chart(revenueCtx, {
@@ -77,8 +78,8 @@
                     datasets: [{
                         label: 'Collected fees',
                         data: [21800, 23600, 22400, 25100, 26800, 29400],
-                        borderColor: '#0f766e',
-                        backgroundColor: 'rgba(15, 118, 110, 0.12)',
+                        borderColor: brandPrimary,
+                        backgroundColor: `${brandPrimary}1f`,
                         borderWidth: 2,
                         fill: true,
                         tension: 0.4
@@ -122,7 +123,7 @@
                     datasets: [{
                             label: 'Booked',
                             data: [198, 214, 205, 226, 238, 252],
-                            backgroundColor: '#0f766e',
+                            backgroundColor: brandPrimary,
                             borderRadius: 4
                         },
                         {

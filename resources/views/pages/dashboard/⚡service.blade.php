@@ -183,7 +183,7 @@ new class extends Component {
             </div>
 
             <div
-                class="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-200">
+                class="rounded-lg border border-primary-200 bg-primary-50 px-4 py-3 text-sm text-primary-800 dark:border-primary-900 dark:bg-primary-950/40 dark:text-primary-200">
                 Demonstration records only. Changes are temporary and are not saved to a database.
             </div>
 
@@ -253,7 +253,7 @@ new class extends Component {
                                 <div
                                     class="mt-3 flex justify-end gap-2 border-t border-gray-100 pt-2 dark:border-gray-700">
                                     <button wire:click="editService({{ $service['id'] }})"
-                                        class="inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-blue-700 hover:bg-blue-50 dark:text-blue-300 dark:hover:bg-blue-950/50"><i
+                                        class="inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-primary-700 hover:bg-primary-50 dark:text-primary-300 dark:hover:bg-primary-950/50"><i
                                             data-lucide="pencil" class="h-4 w-4"></i> Edit</button>
                                     <button wire:click="deleteService({{ $service['id'] }})"
                                         wire:confirm="Delete this service?"
@@ -316,7 +316,7 @@ new class extends Component {
                                             <div class="flex justify-end gap-1">
                                                 <button wire:click="editService({{ $service['id'] }})"
                                                     title="Edit service" aria-label="Edit {{ $service['name'] }}"
-                                                    class="rounded-md p-2 text-gray-500 transition hover:bg-blue-50 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-blue-950/50 dark:hover:text-blue-300"><i
+                                                    class="rounded-md p-2 text-gray-500 transition hover:bg-primary-50 hover:text-primary-700 dark:text-gray-400 dark:hover:bg-primary-950/50 dark:hover:text-primary-300"><i
                                                         data-lucide="pencil" class="h-5 w-5"></i></button>
                                                 <button wire:click="deleteService({{ $service['id'] }})"
                                                     wire:confirm="Delete this service?" title="Delete service"
@@ -343,7 +343,7 @@ new class extends Component {
                                 class="flex min-w-0 flex-col rounded-lg border border-gray-200 p-4 dark:border-gray-700">
                                 <div class="flex items-start justify-between gap-3">
                                     <div class="flex min-w-0 items-start gap-3"><span
-                                            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-50 text-cyan-700 dark:bg-cyan-950/50 dark:text-cyan-300"><i
+                                            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-50 text-accent-700 dark:bg-accent-950/50 dark:text-accent-300"><i
                                                 data-lucide="badge-plus" class="h-5 w-5"></i></span>
                                         <div class="min-w-0">
                                             <h4
@@ -370,7 +370,7 @@ new class extends Component {
                                     <div class="flex gap-1"><button wire:click="editService({{ $service['id'] }})"
                                             title="Edit {{ $service['name'] }}"
                                             aria-label="Edit {{ $service['name'] }}"
-                                            class="rounded-md p-2 text-gray-500 hover:bg-blue-50 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-blue-950/50 dark:hover:text-blue-300"><i
+                                            class="rounded-md p-2 text-gray-500 hover:bg-primary-50 hover:text-primary-700 dark:text-gray-400 dark:hover:bg-primary-950/50 dark:hover:text-primary-300"><i
                                                 data-lucide="pencil" class="h-5 w-5"></i></button><button
                                             wire:click="deleteService({{ $service['id'] }})"
                                             wire:confirm="Delete this service?" title="Delete {{ $service['name'] }}"

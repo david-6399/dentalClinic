@@ -122,39 +122,39 @@ new class extends Component
 </section>
 
 <!-- TEAM VALUES -->
-<section class="section" style="background:#F8FAFC;" aria-labelledby="values-heading">
+<section class="section" style="background:var(--bg);" aria-labelledby="values-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">Our Commitment</div>
       <h2 class="section-title reveal" id="values-heading">The Standards We Hold Ourselves To</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;" class="reveal">
-      <div style="text-align:center;padding:28px 20px;background:#fff;border-radius:16px;border:1px solid var(--border);">
-        <div style="width:48px;height:48px;background:#EFF6FF;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--primary);margin:0 auto 14px;" aria-hidden="true">
+      <div style="text-align:center;padding:28px 20px;background:var(--white);border-radius:16px;border:1px solid var(--border);">
+        <div style="width:48px;height:48px;background:var(--soft-primary);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--primary);margin:0 auto 14px;" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h4 style="font-size:0.9rem;font-weight:700;color:#1e293b;margin-bottom:6px;">Patient Safety First</h4>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:6px;">Patient Safety First</h4>
         <p style="font-size:0.8rem;color:var(--text-light);line-height:1.6;">All procedures follow strict sterilization and safety protocols.</p>
       </div>
-      <div style="text-align:center;padding:28px 20px;background:#fff;border-radius:16px;border:1px solid var(--border);">
-        <div style="width:48px;height:48px;background:#ECFEFF;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--accent);margin:0 auto 14px;" aria-hidden="true">
+      <div style="text-align:center;padding:28px 20px;background:var(--white);border-radius:16px;border:1px solid var(--border);">
+        <div style="width:48px;height:48px;background:var(--soft-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--accent);margin:0 auto 14px;" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-        <h4 style="font-size:0.9rem;font-weight:700;color:#1e293b;margin-bottom:6px;">Continuous Education</h4>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:6px;">Continuous Education</h4>
         <p style="font-size:0.8rem;color:var(--text-light);line-height:1.6;">Our team attends international conferences and training annually.</p>
       </div>
-      <div style="text-align:center;padding:28px 20px;background:#fff;border-radius:16px;border:1px solid var(--border);">
-        <div style="width:48px;height:48px;background:#F0FDF4;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#16A34A;margin:0 auto 14px;" aria-hidden="true">
+      <div style="text-align:center;padding:28px 20px;background:var(--white);border-radius:16px;border:1px solid var(--border);">
+        <div style="width:48px;height:48px;background:var(--success-bg);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--success);margin:0 auto 14px;" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
-        <h4 style="font-size:0.9rem;font-weight:700;color:#1e293b;margin-bottom:6px;">Evidence-Based Care</h4>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:6px;">Evidence-Based Care</h4>
         <p style="font-size:0.8rem;color:var(--text-light);line-height:1.6;">Every recommendation is grounded in the latest dental research.</p>
       </div>
-      <div style="text-align:center;padding:28px 20px;background:#fff;border-radius:16px;border:1px solid var(--border);">
-        <div style="width:48px;height:48px;background:#FFF0F3;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#E11D48;margin:0 auto 14px;" aria-hidden="true">
+      <div style="text-align:center;padding:28px 20px;background:var(--white);border-radius:16px;border:1px solid var(--border);">
+        <div style="width:48px;height:48px;background:var(--soft-rose);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--rose);margin:0 auto 14px;" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
-        <h4 style="font-size:0.9rem;font-weight:700;color:#1e293b;margin-bottom:6px;">Compassionate Care</h4>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:6px;">Compassionate Care</h4>
         <p style="font-size:0.8rem;color:var(--text-light);line-height:1.6;">We treat every patient with empathy, respect, and understanding.</p>
       </div>
     </div>

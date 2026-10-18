@@ -236,7 +236,7 @@ new class extends Component
                                             <button wire:click="editPatient({{ $patient['id'] }})"
                                                 title="Edit patient"
                                                 aria-label="Edit patient for {{ $patient['name'] }}"
-                                                class="rounded-md p-2 text-gray-500 transition hover:bg-blue-50 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-blue-950/50 dark:hover:text-blue-300">
+                                                class="rounded-md p-2 text-gray-500 transition hover:bg-primary-50 hover:text-primary-700 dark:text-gray-400 dark:hover:bg-primary-950/50 dark:hover:text-primary-300">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                     class="size-5">

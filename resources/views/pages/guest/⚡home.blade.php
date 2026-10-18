@@ -57,7 +57,7 @@ new class extends Component
 </section>
 
 <!-- SERVICES OVERVIEW -->
-<section class="section" style="background: #F8FAFC;" aria-labelledby="services-heading">
+<section class="section" style="background: var(--bg);" aria-labelledby="services-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">Our Services</div>
@@ -174,7 +174,7 @@ new class extends Component
 </section>
 
 <!-- BEFORE / AFTER -->
-<section class="section" style="background: #F8FAFC;" aria-labelledby="cases-heading">
+<section class="section" style="background: var(--bg);" aria-labelledby="cases-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">Real Results</div>
@@ -278,9 +278,9 @@ new class extends Component
 <section class="section testimonials-bg" aria-labelledby="testimonials-heading">
   <div class="container">
     <div class="section-header center" style="margin-bottom:48px;">
-      <div class="section-tag reveal" style="color:#67e8f9;">Testimonials</div>
-      <h2 class="section-title reveal" style="color:#fff;" id="testimonials-heading">What Our Patients Say</h2>
-      <p class="section-subtitle reveal" style="color:rgba(255,255,255,0.75);">Don't take our word for it — hear from the patients whose smiles we've transformed.</p>
+      <div class="section-tag reveal" style="color:var(--highlight);">Testimonials</div>
+      <h2 class="section-title reveal" style="color:var(--white);" id="testimonials-heading">What Our Patients Say</h2>
+      <p class="section-subtitle reveal" style="color:var(--white-75);">Don't take our word for it — hear from the patients whose smiles we've transformed.</p>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
@@ -312,7 +312,7 @@ new class extends Component
 </section>
 
 <!-- PATIENT JOURNEY -->
-<section class="section" style="background:#F8FAFC;" aria-labelledby="journey-heading">
+<section class="section" style="background:var(--bg);" aria-labelledby="journey-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">The Process</div>

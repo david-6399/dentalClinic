@@ -79,7 +79,7 @@ new class extends Component {
                                     average</span>
                             </div>
                         </div>
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <div class="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
                             <i data-lucide="calendar-check" class="w-6 h-6 text-white"></i>
                         </div>
                     </div>
@@ -200,7 +200,7 @@ new class extends Component {
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-3">
-                                <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-primary-500 rounded-full"></div>
                                 <span class="text-sm text-gray-600 dark:text-gray-400">Preventive care</span>
                             </div>
                             <div class="text-right">
@@ -325,7 +325,7 @@ new class extends Component {
                                 <span class="text-sm font-medium text-gray-900 dark:text-white">80%</span>
                             </div>
                             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                <div class="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                                <div class="bg-primary-500 h-2 rounded-full transition-all duration-300"
                                     style="width: 80%"></div>
                             </div>
                         </div>
@@ -401,9 +401,9 @@ new class extends Component {
                                 <td class="py-4 px-4">
                                     <div class="flex items-center space-x-3">
                                         <div
-                                            class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                                            class="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
                                             <i data-lucide="clock-3"
-                                                class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                                                class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
                                         </div>
                                         <div>
                                             <p class="font-medium text-gray-900 dark:text-white">8:30 AM</p>
