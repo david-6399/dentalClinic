@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\PageContent;
 use Livewire\Component;
 
 new class extends Component {
@@ -7,9 +8,12 @@ new class extends Component {
 };
 ?>
 
+@php($pageContent = PageContent::forPage('about'))
+
 <div>
 
     <!-- PAGE HERO -->
+    @if ($pageContent['hero']['enabled'])
     <section class="page-hero" aria-labelledby="page-heading">
         <div class="page-hero-content">
             <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -17,12 +21,14 @@ new class extends Component {
                 <span class="breadcrumb-sep" aria-hidden="true">/</span>
                 <span>About</span>
             </nav>
-            <h1 id="page-heading">About Nova Dental</h1>
-            <p>A decade of smiles, trust, and unwavering commitment to the highest standards in dental care.</p>
+            <h1 id="page-heading">{{ $pageContent['hero']['title'] }}</h1>
+            <p>{{ $pageContent['hero']['description'] }}</p>
         </div>
     </section>
+    @endif
 
     <!-- OUR STORY -->
+    @if ($pageContent['story']['enabled'])
     <section class="section" aria-labelledby="story-heading">
         <div class="container">
             <div class="story-grid">
@@ -32,7 +38,10 @@ new class extends Component {
                 </div>
                 <div class="story-text reveal-right">
                     <div class="section-tag">Our Story</div>
-                    <h2 class="section-title" id="story-heading">Modern Dentistry<br />For Modern Families</h2>
+                    <h2 class="section-title" id="story-heading">{!! nl2br(e($pageContent['story']['title'])) !!}</h2>
+                    @if ($pageContent['story']['description'] !== '')
+                        <p>{{ $pageContent['story']['description'] }}</p>
+                    @endif
                     <p>Nova Dental Clinic was founded in 2009 by <strong>Dr. Ahmed Benali</strong> with a clear vision:
                         to bring international standards of dental care to Algerian families. Starting as a single-chair
                         practice in Alger Centre, Nova Dental has grown into a full-service multi-specialty clinic.</p>
@@ -58,6 +67,7 @@ new class extends Component {
             </div>
         </div>
     </section>
+    @endif
 
     <!-- STATS -->
     <section class="stats-bar" aria-label="Clinic statistics">
@@ -82,83 +92,39 @@ new class extends Component {
     </section>
 
     <!-- CORE VALUES -->
+    @if ($pageContent['values']['enabled'])
     <section class="section" style="background:var(--bg);" aria-labelledby="values-heading">
         <div class="container">
             <div class="section-header center">
                 <div class="section-tag reveal">Core Values</div>
-                <h2 class="section-title reveal" id="values-heading">What We Stand For</h2>
-                <p class="section-subtitle reveal">Our values guide every decision, every procedure, and every patient
-                    interaction.</p>
+                <h2 class="section-title reveal" id="values-heading">{{ $pageContent['values']['title'] }}</h2>
+                <p class="section-subtitle reveal">{{ $pageContent['values']['description'] }}</p>
             </div>
             <div class="values-grid">
-                <div class="value-card reveal">
-                    <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg></div>
-                    <h3>Safety</h3>
-                    <p>Hospital-grade sterilization, ISO-certified protocols, and a zero-compromise attitude toward
-                        patient safety.</p>
-                </div>
-                <div class="value-card reveal reveal-delay-1">
-                    <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg></div>
-                    <h3>Compassion</h3>
-                    <p>We listen, we understand, and we tailor every experience to make you feel comfortable and cared
-                        for.</p>
-                </div>
-                <div class="value-card reveal reveal-delay-2">
-                    <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                        </svg></div>
-                    <h3>Excellence</h3>
-                    <p>We continuously invest in training and technology to deliver outcomes that meet international
-                        standards.</p>
-                </div>
-                <div class="value-card reveal">
-                    <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 6v6l4 2" />
-                        </svg></div>
-                    <h3>Transparency</h3>
-                    <p>Honest pricing, clear treatment plans, and open communication — no surprises, ever.</p>
-                </div>
-                <div class="value-card reveal reveal-delay-1">
-                    <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg></div>
-                    <h3>Community</h3>
-                    <p>We are proud to serve Algerian families and are committed to improving oral health across our
-                        community.</p>
-                </div>
-                <div class="value-card reveal reveal-delay-2">
-                    <div class="value-icon" aria-hidden="true"><svg width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                        </svg></div>
-                    <h3>Innovation</h3>
-                    <p>From digital impressions to 3D implant planning, we embrace technology that improves outcomes for
-                        patients.</p>
-                </div>
+                @foreach ($pageContent['values']['items'] as $item)
+                    <div class="value-card reveal">
+                        <div class="value-icon" aria-hidden="true">
+                            <x-heroicon :name="$item['icon'] ?? 'sparkles'" class="h-6 w-6" />
+                        </div>
+                        <h3>{{ $item['title'] }}</h3>
+                        <p>{{ $item['description'] }}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
+    @endif
 
     <!-- MILESTONES -->
+    @if ($pageContent['milestones']['enabled'])
     <section class="section" aria-labelledby="milestones-heading">
         <div class="container">
             <div class="section-header center">
                 <div class="section-tag reveal">Our Journey</div>
-                <h2 class="section-title reveal" id="milestones-heading">15 Years of Growth</h2>
+                <h2 class="section-title reveal" id="milestones-heading">{{ $pageContent['milestones']['title'] }}</h2>
+                @if ($pageContent['milestones']['description'] !== '')
+                    <p class="section-subtitle reveal">{{ $pageContent['milestones']['description'] }}</p>
+                @endif
             </div>
             <div style="max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:0;">
                 <div style="display:flex;gap:24px;padding-bottom:32px;position:relative;">
@@ -227,13 +193,14 @@ new class extends Component {
             </div>
         </div>
     </section>
+    @endif
 
     <!-- CTA -->
+    @if ($pageContent['cta']['enabled'])
     <section class="cta-section" aria-labelledby="cta-heading">
         <div class="reveal">
-            <h2 id="cta-heading">Become Part of Our Story</h2>
-            <p>Join thousands of patients who have trusted Nova Dental Clinic for their oral health journey. We'd love
-                to welcome you.</p>
+            <h2 id="cta-heading">{{ $pageContent['cta']['title'] }}</h2>
+            <p>{{ $pageContent['cta']['description'] }}</p>
             <div class="cta-buttons">
                 <a href="contact.html" class="btn-white"><svg width="16" height="16" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -244,5 +211,6 @@ new class extends Component {
             </div>
         </div>
     </section>
+    @endif
 
 </div>

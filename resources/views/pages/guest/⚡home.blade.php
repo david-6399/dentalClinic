@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\PageContent;
 use Livewire\Component;
 
 new class extends Component
@@ -8,8 +9,14 @@ new class extends Component
 };
 ?>
 
+@php
+    $pageContent = PageContent::forPage('home');
+    $heroTitleLines = preg_split('/\R/u', $pageContent['hero']['title'], 2);
+@endphp
+
 <div>
     <!-- HERO -->
+    @if ($pageContent['hero']['enabled'])
     <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -19,8 +26,8 @@ new class extends Component
         <span class="hero-badge-dot" aria-hidden="true"></span>
         Now Accepting New Patients
       </div>
-      <h1 id="hero-heading">Healthy Smiles <br /><span>Start Here</span></h1>
-      <p>Advanced dental care for adults and children in a comfortable, modern environment. Experience dentistry that puts you first.</p>
+      <h1 id="hero-heading">{{ $heroTitleLines[0] }}@if (isset($heroTitleLines[1]))<br /><span>{{ $heroTitleLines[1] }}</span>@endif</h1>
+      <p>{{ $pageContent['hero']['description'] }}</p>
       <div class="hero-buttons">
         <a href="{{ route('guest.contact') }}" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
@@ -34,35 +41,46 @@ new class extends Component
     </div>
     <div class="hero-right">
       <div class="hero-right-card">
-        <h3>Our Results at a Glance</h3>
-        <div class="hero-stat-grid">
-          <div class="hero-stat"><div class="num">15+</div><div class="label">Years of Excellence</div></div>
-          <div class="hero-stat"><div class="num">5,000+</div><div class="label">Happy Patients</div></div>
-          <div class="hero-stat"><div class="num">4.9★</div><div class="label">Average Rating</div></div>
-          <div class="hero-stat"><div class="num">6</div><div class="label">Specializations</div></div>
-        </div>
+      @if ($pageContent['hero_stats']['enabled'])
+      <h3>{{ $pageContent['hero_stats']['title'] }}</h3>
+      <div class="hero-stat-grid">
+        @foreach ($pageContent['hero_stats']['items'] as $item)
+          <div class="hero-stat">
+            <div class="num">{{ $item['value'] }}{{ $item['suffix'] }}</div>
+            <div class="label">{{ $item['title'] }}</div>
+          </div>
+        @endforeach
       </div>
+      @endif
+    </div>
     </div>
   </div>
 </section>
+    @endif
 
 <!-- STATS BAR -->
+@if ($pageContent['statistics']['enabled'])
 <section class="stats-bar" aria-label="Key statistics">
   <div class="stats-grid">
-    <div class="stat-item reveal"><div class="stat-num" data-count="15" data-suffix="+">0</div><div class="stat-label">Years Experience</div></div>
-    <div class="stat-item reveal reveal-delay-1"><div class="stat-num" data-count="5000" data-suffix="+">0</div><div class="stat-label">Patients Treated</div></div>
-    <div class="stat-item reveal reveal-delay-2"><div class="stat-num" data-count="4.9" data-suffix="/5" data-decimals="1">0</div><div class="stat-label">Patient Rating</div></div>
-    <div class="stat-item reveal reveal-delay-3"><div class="stat-num" data-count="6">0</div><div class="stat-label">Specialized Services</div></div>
+    @foreach ($pageContent['statistics']['items'] as $index => $item)
+      <div class="stat-item reveal {{ $index > 0 ? 'reveal-delay-'.$index : '' }}">
+        <div class="stat-num" data-count="{{ $item['value'] }}" data-suffix="{{ $item['suffix'] }}"
+            data-decimals="{{ str_contains($item['value'], '.') ? strlen(explode('.', $item['value'])[1]) : 0 }}">0</div>
+        <div class="stat-label">{{ $item['title'] }}</div>
+      </div>
+    @endforeach
   </div>
 </section>
+@endif
 
 <!-- SERVICES OVERVIEW -->
+@if ($pageContent['services']['enabled'])
 <section class="section" style="background: var(--bg);" aria-labelledby="services-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">Our Services</div>
-      <h2 class="section-title reveal" id="services-heading">Comprehensive Dental Care</h2>
-      <p class="section-subtitle reveal">From routine checkups to advanced cosmetic procedures, we offer a full range of dental services designed for every need and budget.</p>
+      <h2 class="section-title reveal" id="services-heading">{{ $pageContent['services']['title'] }}</h2>
+      <p class="section-subtitle reveal">{{ $pageContent['services']['description'] }}</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
@@ -134,8 +152,10 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- WHY CHOOSE US -->
+@if ($pageContent['why']['enabled'])
 <section class="section" aria-labelledby="why-heading">
   <div class="container">
     <div class="why-grid">
@@ -148,8 +168,8 @@ new class extends Component
       </div>
       <div class="reveal-right">
         <div class="section-tag">Why Choose Us</div>
-        <h2 class="section-title" id="why-heading">Care You Can<br />Always Trust</h2>
-        <p class="section-subtitle" style="margin-bottom: 36px;">We combine years of experience with the latest technology and a patient-first approach to deliver outstanding dental outcomes.</p>
+        <h2 class="section-title" id="why-heading">{!! nl2br(e($pageContent['why']['title'])) !!}</h2>
+        <p class="section-subtitle" style="margin-bottom: 36px;">{{ $pageContent['why']['description'] }}</p>
         <div class="why-features">
           <div class="why-feature">
             <div class="why-feature-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
@@ -172,14 +192,16 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- BEFORE / AFTER -->
+@if ($pageContent['cases']['enabled'])
 <section class="section" style="background: var(--bg);" aria-labelledby="cases-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">Real Results</div>
-      <h2 class="section-title reveal" id="cases-heading">Before &amp; After</h2>
-      <p class="section-subtitle reveal">See the transformative difference our treatments make for our patients.</p>
+      <h2 class="section-title reveal" id="cases-heading">{{ $pageContent['cases']['title'] }}</h2>
+      <p class="section-subtitle reveal">{{ $pageContent['cases']['description'] }}</p>
     </div>
     <div class="before-after-grid">
       <div class="ba-card reveal">
@@ -209,14 +231,16 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- TEAM -->
+@if ($pageContent['team']['enabled'])
 <section class="section" aria-labelledby="team-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">Our Team</div>
-      <h2 class="section-title reveal" id="team-heading">Meet Our Specialists</h2>
-      <p class="section-subtitle reveal">A dedicated team of board-certified dentists committed to your smile and well-being.</p>
+      <h2 class="section-title reveal" id="team-heading">{{ $pageContent['team']['title'] }}</h2>
+      <p class="section-subtitle reveal">{{ $pageContent['team']['description'] }}</p>
     </div>
     <div class="doctors-grid">
       <div class="doctor-card reveal">
@@ -273,14 +297,16 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- TESTIMONIALS -->
+@if ($pageContent['testimonials']['enabled'])
 <section class="section testimonials-bg" aria-labelledby="testimonials-heading">
   <div class="container">
     <div class="section-header center" style="margin-bottom:48px;">
       <div class="section-tag reveal" style="color:var(--highlight);">Testimonials</div>
-      <h2 class="section-title reveal" style="color:var(--white);" id="testimonials-heading">What Our Patients Say</h2>
-      <p class="section-subtitle reveal" style="color:var(--white-75);">Don't take our word for it — hear from the patients whose smiles we've transformed.</p>
+      <h2 class="section-title reveal" style="color:var(--white);" id="testimonials-heading">{{ $pageContent['testimonials']['title'] }}</h2>
+      <p class="section-subtitle reveal" style="color:var(--white-75);">{{ $pageContent['testimonials']['description'] }}</p>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
@@ -310,14 +336,16 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- PATIENT JOURNEY -->
+@if ($pageContent['journey']['enabled'])
 <section class="section" style="background:var(--bg);" aria-labelledby="journey-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">The Process</div>
-      <h2 class="section-title reveal" id="journey-heading">Your Journey to a Better Smile</h2>
-      <p class="section-subtitle reveal">Four simple steps from your first contact to a confident, healthy smile.</p>
+      <h2 class="section-title reveal" id="journey-heading">{{ $pageContent['journey']['title'] }}</h2>
+      <p class="section-subtitle reveal">{{ $pageContent['journey']['description'] }}</p>
     </div>
     <div class="timeline">
       <div class="timeline-item">
@@ -343,14 +371,16 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- FAQ -->
+@if ($pageContent['faq']['enabled'])
 <section class="section" aria-labelledby="faq-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">FAQ</div>
-      <h2 class="section-title reveal" id="faq-heading">Frequently Asked Questions</h2>
-      <p class="section-subtitle reveal">Have a question? We've got answers to the most common queries from our patients.</p>
+      <h2 class="section-title reveal" id="faq-heading">{{ $pageContent['faq']['title'] }}</h2>
+      <p class="section-subtitle reveal">{{ $pageContent['faq']['description'] }}</p>
     </div>
     <div class="faq-list reveal" role="list">
       <div class="faq-item" role="listitem">
@@ -376,18 +406,23 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- CTA -->
+@if ($pageContent['cta']['enabled'])
 <section class="cta-section" aria-labelledby="cta-heading">
   <div class="reveal">
-    <h2 id="cta-heading">Ready for a Healthier Smile?</h2>
-    <p>Join over 5,000 patients who trust Nova Dental Clinic for their oral health. Book your consultation today.</p>
+    <h2 id="cta-heading">{{ $pageContent['cta']['title'] }}</h2>
+    @if ($pageContent['cta']['description'] !== '')
+      <p>{{ $pageContent['cta']['description'] }}</p>
+    @endif
     <div class="cta-buttons">
       <a href="contact.html" class="btn-white"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book Your Consultation</a>
       <a href="tel:+21321000000" class="btn-outline-white"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Us Now</a>
     </div>
   </div>
 </section>
+@endif
 
   
 </div>

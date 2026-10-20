@@ -18,14 +18,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-900">
-
-
+<body class="bg-gray-50 dark:bg-gray-900 max-h-screen overflow-hidden font-sans antialiased text-gray-900 dark:text-gray-100">
 
     <div class="flex h-screen">
         <livewire:dashboard.sidbar />
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col min-h-screen md:ml-0">
+        <div class="flex-1 flex flex-col min-h-screen md:ml-0 dark:bg-gray-950">
             {{ $slot }}
         </div>
     </div>

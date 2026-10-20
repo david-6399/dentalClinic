@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\PageContent;
 use Livewire\Component;
 
 new class extends Component
@@ -8,9 +9,12 @@ new class extends Component
 };
 ?>
 
+@php($pageContent = PageContent::forPage('services'))
+
 <div>
     
 <!-- PAGE HERO -->
+@if ($pageContent['hero']['enabled'])
 <section class="page-hero" aria-labelledby="page-heading">
   <div class="page-hero-content">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -18,18 +22,20 @@ new class extends Component
       <span class="breadcrumb-sep" aria-hidden="true">/</span>
       <span>Services</span>
     </nav>
-    <h1 id="page-heading">Our Dental Services</h1>
-    <p>Comprehensive, transparent dental care with upfront pricing. From your first checkup to cosmetic transformations — we have you covered.</p>
+    <h1 id="page-heading">{{ $pageContent['hero']['title'] }}</h1>
+    <p>{{ $pageContent['hero']['description'] }}</p>
   </div>
 </section>
+@endif
 
 <!-- SERVICES DETAIL -->
+@if ($pageContent['offers']['enabled'])
 <section class="section" aria-labelledby="services-detail-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">Full Range of Care</div>
-      <h2 class="section-title reveal" id="services-detail-heading">What We Offer</h2>
-      <p class="section-subtitle reveal">Every service is delivered by board-certified specialists using the latest technology and evidence-based techniques.</p>
+      <h2 class="section-title reveal" id="services-detail-heading">{{ $pageContent['offers']['title'] }}</h2>
+      <p class="section-subtitle reveal">{{ $pageContent['offers']['description'] }}</p>
     </div>
     <div class="services-detail-grid">
 
@@ -138,50 +144,42 @@ new class extends Component
     </div>
   </div>
 </section>
+@endif
 
 <!-- PROCESS TIMELINE -->
+@if ($pageContent['journey']['enabled'])
 <section class="section" style="background:var(--bg);" aria-labelledby="process-heading">
   <div class="container">
     <div class="section-header center">
       <div class="section-tag reveal">How It Works</div>
-      <h2 class="section-title reveal" id="process-heading">Your Patient Journey</h2>
-      <p class="section-subtitle reveal">A seamless experience from booking to follow-up care.</p>
+      <h2 class="section-title reveal" id="process-heading">{{ $pageContent['journey']['title'] }}</h2>
+      <p class="section-subtitle reveal">{{ $pageContent['journey']['description'] }}</p>
     </div>
     <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:24px; margin-top:8px;" class="reveal">
-      <div style="text-align:center; padding:24px;">
-        <div style="width:56px;height:56px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.2rem;font-weight:800;margin:0 auto 16px;" aria-hidden="true">1</div>
-        <h4 style="font-size:0.95rem;font-weight:700;color:var(--heading);margin-bottom:8px;">Book</h4>
-        <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">Call, visit, or book online. We confirm within 30 minutes.</p>
-      </div>
-      <div style="text-align:center; padding:24px;">
-        <div style="width:56px;height:56px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.2rem;font-weight:800;margin:0 auto 16px;" aria-hidden="true">2</div>
-        <h4 style="font-size:0.95rem;font-weight:700;color:var(--heading);margin-bottom:8px;">Consult</h4>
-        <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">Meet your specialist, get examined, and receive a custom plan.</p>
-      </div>
-      <div style="text-align:center; padding:24px;">
-        <div style="width:56px;height:56px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.2rem;font-weight:800;margin:0 auto 16px;" aria-hidden="true">3</div>
-        <h4 style="font-size:0.95rem;font-weight:700;color:var(--heading);margin-bottom:8px;">Treatment</h4>
-        <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">Receive world-class care in our modern, safe environment.</p>
-      </div>
-      <div style="text-align:center; padding:24px;">
-        <div style="width:56px;height:56px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.2rem;font-weight:800;margin:0 auto 16px;" aria-hidden="true">4</div>
-        <h4 style="font-size:0.95rem;font-weight:700;color:var(--heading);margin-bottom:8px;">Follow Up</h4>
-        <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">We monitor your progress and are here whenever you need us.</p>
-      </div>
+      @foreach ($pageContent['journey']['items'] as $index => $item)
+        <div style="text-align:center; padding:24px;">
+          <div style="width:56px;height:56px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.2rem;font-weight:800;margin:0 auto 16px;" aria-hidden="true">{{ $index + 1 }}</div>
+          <h4 style="font-size:0.95rem;font-weight:700;color:var(--heading);margin-bottom:8px;">{{ $item['title'] }}</h4>
+          <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">{{ $item['description'] }}</p>
+        </div>
+      @endforeach
     </div>
   </div>
 </section>
+@endif
 
 <!-- CTA -->
+@if ($pageContent['cta']['enabled'])
 <section class="cta-section" aria-labelledby="cta-heading">
   <div class="reveal">
-    <h2 id="cta-heading">Not Sure Which Service You Need?</h2>
-    <p>Start with a consultation. Our specialists will assess your oral health and recommend the best treatment plan for your specific needs and budget.</p>
+    <h2 id="cta-heading">{{ $pageContent['cta']['title'] }}</h2>
+    <p>{{ $pageContent['cta']['description'] }}</p>
     <div class="cta-buttons">
       <a href="contact.html" class="btn-white"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a Consultation</a>
       <a href="doctors.html" class="btn-outline-white">Meet Our Doctors</a>
     </div>
   </div>
 </section>
+@endif
 
 </div>

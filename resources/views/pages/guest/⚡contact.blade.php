@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\PageContent;
 use Livewire\Component;
 
 new class extends Component {
@@ -7,8 +8,11 @@ new class extends Component {
 };
 ?>
 
+@php($pageContent = PageContent::forPage('contact'))
+
 <div>
     <!-- PAGE HERO -->
+    @if ($pageContent['hero']['enabled'])
     <section class="page-hero" aria-labelledby="page-heading">
         <div class="page-hero-content">
             <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -16,13 +20,14 @@ new class extends Component {
                 <span class="breadcrumb-sep" aria-hidden="true">/</span>
                 <span>Contact</span>
             </nav>
-            <h1 id="page-heading">Get in Touch</h1>
-            <p>Ready to start your smile journey? Book a consultation or reach out to us — we'd love to hear from you.
-            </p>
+            <h1 id="page-heading">{{ $pageContent['hero']['title'] }}</h1>
+            <p>{{ $pageContent['hero']['description'] }}</p>
         </div>
     </section>
+    @endif
 
     <!-- CONTACT SECTION -->
+    @if ($pageContent['contact']['enabled'])
     <section class="section" aria-labelledby="contact-main-heading">
         <div class="container">
             <h2 class="sr-only" id="contact-main-heading">Contact Information and Consultation Form</h2>
@@ -31,10 +36,8 @@ new class extends Component {
                 <!-- INFO COLUMN -->
                 <div class="reveal-left">
                     <div class="contact-info-card">
-                        <h3 style="font-size:1.1rem;font-weight:700;color:var(--heading);margin-bottom:4px;">Contact
-                            Information</h3>
-                        <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:8px;">We're here to help.
-                            Reach us by phone, email, or visit us in clinic.</p>
+                        <h3 style="font-size:1.1rem;font-weight:700;color:var(--heading);margin-bottom:4px;">{{ $pageContent['contact']['title'] }}</h3>
+                        <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:8px;">{{ $pageContent['contact']['description'] }}</p>
 
                         <div class="contact-info-item">
                             <div class="contact-info-icon" aria-hidden="true">
@@ -214,6 +217,7 @@ new class extends Component {
             </div>
         </div>
     </section>
+    @endif
 
     <!-- MAP PLACEHOLDER -->
     <section class="section-sm" style="background:var(--bg);" aria-label="Clinic location">
@@ -249,71 +253,40 @@ new class extends Component {
     </section>
 
     <!-- FAQ -->
+    @if ($pageContent['faq']['enabled'])
     <section class="section" aria-labelledby="faq-heading">
         <div class="container">
             <div class="section-header center">
                 <div class="section-tag reveal">Before You Visit</div>
-                <h2 class="section-title reveal" id="faq-heading">Common Questions</h2>
+                <h2 class="section-title reveal" id="faq-heading">{{ $pageContent['faq']['title'] }}</h2>
+                @if ($pageContent['faq']['description'] !== '')
+                    <p class="section-subtitle reveal">{{ $pageContent['faq']['description'] }}</p>
+                @endif
             </div>
             <div class="faq-list reveal" role="list" style="max-width:700px;">
-                <div class="faq-item" role="listitem">
-                    <button class="faq-question" aria-expanded="false">Do I need to bring anything to my first visit?
-                        <span class="faq-icon" aria-hidden="true"><svg width="12" height="12"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg></span></button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">For your first visit, simply bring a valid ID. If you have
-                            previous dental X-rays or medical records, they can be helpful but are not required. We'll
-                            perform our own comprehensive examination and digital X-rays.</div>
+                @foreach ($pageContent['faq']['items'] as $item)
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">{{ $item['title'] }}
+                            <span class="faq-icon" aria-hidden="true"><svg width="12" height="12"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M12 5v14M5 12h14" />
+                                </svg></span></button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">{{ $item['description'] }}</div>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item" role="listitem">
-                    <button class="faq-question" aria-expanded="false">How early should I arrive for my appointment?
-                        <span class="faq-icon" aria-hidden="true"><svg width="12" height="12"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg></span></button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">We recommend arriving 10 minutes before your scheduled
-                            appointment to complete a brief intake form. For new patients, 15 minutes early is ideal so
-                            we can review your dental history.</div>
-                    </div>
-                </div>
-                <div class="faq-item" role="listitem">
-                    <button class="faq-question" aria-expanded="false">What payment methods do you accept? <span
-                            class="faq-icon" aria-hidden="true"><svg width="12" height="12"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg></span></button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">We accept cash, CIB card, and bank transfers (virement bancaire).
-                            For larger procedures such as implants, we offer flexible payment arrangements — please ask
-                            at reception about our installment plans.</div>
-                    </div>
-                </div>
-                <div class="faq-item" role="listitem">
-                    <button class="faq-question" aria-expanded="false">Can I cancel or reschedule my appointment?
-                        <span class="faq-icon" aria-hidden="true"><svg width="12" height="12"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg></span></button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Yes. We ask that you notify us at least 24 hours in advance if
-                            you need to cancel or reschedule. You can call us directly or send an email and we will
-                            accommodate you as best we can.</div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
+    @endif
 
     <!-- CTA -->
+    @if ($pageContent['cta']['enabled'])
     <section class="cta-section" aria-labelledby="cta-heading">
         <div class="reveal">
-            <h2 id="cta-heading">We Can't Wait to Meet You</h2>
-            <p>Whether you're coming in for a routine checkup or a smile transformation, Nova Dental Clinic is here for
-                you every step of the way.</p>
+            <h2 id="cta-heading">{{ $pageContent['cta']['title'] }}</h2>
+            <p>{{ $pageContent['cta']['description'] }}</p>
             <div class="cta-buttons">
                 <a href="tel:+21321000000" class="btn-white"><svg width="16" height="16" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -324,5 +297,6 @@ new class extends Component {
             </div>
         </div>
     </section>
+    @endif
 
 </div>

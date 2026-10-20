@@ -25,6 +25,7 @@ route::livewire('/dashboard/appointments', 'pages::dashboard.appointement')->nam
 route::livewire('/dashboard/patients', 'pages::dashboard.patient')->name('dashboard.patients');
 route::livewire('/dashboard/doctors', 'pages::dashboard.doctor')->name('dashboard.doctors');
 route::livewire('/dashboard/services', 'pages::dashboard.service')->name('dashboard.services');
+route::livewire('/dashboard/customize-pages', 'pages::dashboard.costumize-pages')->name('dashboard.customize-pages');
 
 
 

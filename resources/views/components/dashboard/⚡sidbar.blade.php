@@ -84,6 +84,11 @@ new class extends Component {
                 <i data-lucide="briefcase-medical" class="w-5 h-5"></i>
                 <span class="font-medium">Services</span>
             </a>
+            <a href="{{ route('dashboard.customize-pages') }}"
+                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
+                <i data-lucide="panels-top-left" class="w-5 h-5"></i>
+                <span class="font-medium">Customize pages</span>
+            </a>
             <a href="{{ route('guest.home') }}"
                 class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
                 <i data-lucide="undo-2" class="w-5 h-5"></i>

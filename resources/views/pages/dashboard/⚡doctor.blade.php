@@ -226,8 +226,8 @@ new class extends Component {
                 </article>
             </section>
 
-            <div
-                class="rounded-lg border border-primary-200 bg-primary-50 px-4 py-3 text-sm text-primary-800 dark:border-primary-900 dark:bg-primary-950/40 dark:text-primary-200">
+             <div
+                class="rounded-xl border border-red-200 bg-red-100 px-4 py-3 text-sm text-red-800 dark:border-red-900 dark:bg-red-850 dark:text-red-900">
                 Demonstration records only. Changes are temporary and are not saved to a database.
             </div>
 

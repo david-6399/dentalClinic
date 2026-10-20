@@ -99,7 +99,7 @@ new class extends Component
                 </div>
                 <span class="text-sm text-gray-500 dark:text-gray-400">Sample clinic records</span>
             </div>
-
+             
             <section aria-label="Most frequent patients" class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
                 @foreach (collect($this->patientRecords)->sortByDesc('visits')->take(4) as $featuredPatient)
                     <article wire:key="featured-patient-{{ $featuredPatient['id'] }}"
@@ -117,7 +117,10 @@ new class extends Component
                     </article>
                 @endforeach
             </section>
-
+            <div
+                class="rounded-xl border border-red-200 bg-red-100 px-4 py-3 text-sm text-red-800 dark:border-red-900 dark:bg-red-850 dark:text-red-900">
+                Demonstration records only. Changes are temporary and are not saved to a database.
+            </div>
             <section
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800"
                 aria-label="All patients">
