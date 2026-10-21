@@ -76,7 +76,7 @@ new class extends Component
     }
 
     public function addItem(string $sectionKey): void
-    {
+    { 
         if (! isset(PageContent::pages()[$this->selectedPage]['sections'][$sectionKey]['items'])) {
             abort(404);
         }
@@ -206,7 +206,7 @@ new class extends Component
                     @endforeach
                 </nav>
 
-                <section class="min-w-0 space-y-4" aria-label="{{ PageContent::pages()[$selectedPage]['label'] }} page sections">
+                <section wire:key="page-sections-{{ $selectedPage }}" class="min-w-0 space-y-4" aria-label="{{ PageContent::pages()[$selectedPage]['label'] }} page sections">
                     <div class="flex items-center justify-between gap-3 px-1">
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
@@ -219,7 +219,8 @@ new class extends Component
                     </div>
 
                     @foreach ($sections as $key => $section)
-                        <article @class([
+                        <article wire:key="section-{{ $selectedPage }}-{{ $key }}" 
+                        @class([
                             'rounded-xl border bg-white shadow-sm transition dark:bg-gray-800',
                             'border-gray-200 dark:border-gray-700' => $section['enabled'],
                             'border-dashed border-gray-300 opacity-75 dark:border-gray-600' => ! $section['enabled'],
@@ -284,10 +285,10 @@ new class extends Component
                                                     Add, edit, remove, and reorder the items shown in this section.
                                                 </p>
                                             </div>
-                                            <button type="button" wire:click="addItem('{{ $key }}')"
+                                            <button type="button" wire:click="addItem('{{ $key }}')" 
                                                 class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700">
                                                 <x-heroicon name="plus" class="h-4 w-4" />
-                                                Add item
+                                                Add item 
                                             </button>
                                         </div>
 
