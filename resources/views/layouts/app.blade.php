@@ -30,6 +30,8 @@
                 </header>
             @endisset --}}
 
+            
+
             <!-- Page Content -->
 
                 {{ $slot }}
