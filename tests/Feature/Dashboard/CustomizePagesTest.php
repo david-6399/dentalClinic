@@ -57,6 +57,23 @@ it('saves and reorders repeatable section items', function () {
         ->assertSee('Meet your dentist');
 });
 
+it('toggles section visibility without changing pages', function () {
+    $editor = Livewire::test('pages::dashboard.costumize-pages');
+
+    foreach (PageContent::pages() as $pageKey => $page) {
+        $thirdSection = array_keys($page['sections'])[2];
+
+        $editor
+            ->call('selectPage', $pageKey)
+            ->call('toggleSection', $thirdSection)
+            ->assertSet("sections.{$thirdSection}.enabled", false)
+            ->call('save')
+            ->assertHasNoErrors();
+
+        expect(PageContent::forPage($pageKey)[$thirdSection]['enabled'])->toBeFalse();
+    }
+});
+
 it('adds and removes repeatable items', function () {
     Livewire::test('pages::dashboard.costumize-pages')
         ->call('selectPage', 'doctors')
@@ -72,6 +89,19 @@ it('adds and removes repeatable items', function () {
     expect($values)->toHaveCount(4);
     expect(collect($values)->pluck('title')->all())->toContain('Patient first');
     expect(collect($values)->pluck('title')->all())->not->toContain('Continuous Education');
+});
+
+it('allows Home Hero statistics to contain fewer than four items', function () {
+    Livewire::test('pages::dashboard.costumize-pages')
+        ->call('selectPage', 'home')
+        ->call('removeItem', 'hero_stats', 3)
+        ->call('save')
+        ->assertHasNoErrors();
+
+    $heroStats = PageContent::forPage('home')['hero_stats']['items'];
+
+    expect($heroStats)->toHaveCount(3);
+    $this->get('/home')->assertOk()->assertDontSee('Specializations');
 });
 
 it('deletes all existing items and does not persist a new item that was removed', function () {

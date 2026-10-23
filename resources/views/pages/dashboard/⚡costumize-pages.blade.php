@@ -102,6 +102,16 @@ new class extends Component
         $this->sections[$sectionKey]['items'] = array_values($this->sections[$sectionKey]['items']);
     }
 
+    public function toggleSection(string $sectionKey): void
+    {
+        if (! isset(PageContent::pages()[$this->selectedPage]['sections'][$sectionKey])
+            || ! isset($this->sections[$sectionKey]['enabled'])) {
+            abort(404);
+        }
+
+        $this->sections[$sectionKey]['enabled'] = ! $this->sections[$sectionKey]['enabled'];
+    }
+
     public function moveItem(string $sectionKey, int $index, int $direction): void
     {
         $items = $this->sections[$sectionKey]['items'] ?? null;
@@ -240,15 +250,19 @@ new class extends Component
                                         </p>
                                     </div>
                                 </div>
-                                <label for="section-enabled-{{ $key }}" class="inline-flex cursor-pointer items-center gap-3 self-start sm:self-auto">
+                                <button type="button" wire:click="toggleSection('{{ $key }}')" role="switch"
+                                    aria-checked="{{ $section['enabled'] ? 'true' : 'false' }}"
+                                    aria-label="Toggle {{ strtolower($section['label']) }} section visibility"
+                                    class="inline-flex cursor-pointer items-center gap-3 self-start rounded focus:outline-none focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 sm:self-auto">
                                     <span class="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                                         {{ $section['enabled'] ? 'Active' : 'Inactive' }}
                                     </span>
-                                    <input id="section-enabled-{{ $key }}" type="checkbox"
-                                        wire:model="sections.{{ $key }}.enabled" class="peer sr-only">
-                                    <span aria-hidden="true"
-                                        class="relative h-6 w-11 rounded-full bg-gray-300 transition peer-checked:bg-primary-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-200 dark:bg-gray-600 dark:peer-focus:ring-primary-900 after:absolute after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition after:content-[''] peer-checked:after:translate-x-5"></span>
-                                </label>
+                                    <span aria-hidden="true" @class([
+                                        'relative h-6 w-11 rounded-full transition after:absolute after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition after:content-[\'\']',
+                                        'bg-primary-600 after:translate-x-5' => $section['enabled'],
+                                        'bg-gray-300 dark:bg-gray-600' => ! $section['enabled'],
+                                    ])></span>
+                                </button>
                             </div>
 
                             <div class="grid gap-4 p-4 sm:grid-cols-2 sm:px-6 sm:py-5">
